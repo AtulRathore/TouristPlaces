@@ -32,6 +32,7 @@
         <activity android:name=".Akshardham"></activity>
         <activity android:name=".Dakshineshwar"></activity>
         <activity android:name=".BandraWorlie"></activity>
+        <activity android:name=".Register"></activity>
 
     </application>
 

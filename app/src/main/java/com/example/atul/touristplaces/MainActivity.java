@@ -10,19 +10,31 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
 
-    Button button;
+    Button button, btnRegister;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        button = (Button) findViewById(R.id.button);
+        button = (Button) findViewById(R.id.login);
         button.setOnClickListener(this);
+        btnRegister= (Button) findViewById(R.id.toregister);
+        btnRegister.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        Toast.makeText(this, "Toast", Toast.LENGTH_SHORT).show();
-        Intent i = new Intent(this,MetroCitiies.class);
-        startActivity(i);
+        if (view==button) {
+            Toast.makeText(this, "Toast", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(this, MetroCitiies.class);
+            startActivity(i);
+            finish();
+        }
+
+        else if (view==btnRegister){
+            Toast.makeText(MainActivity.this, "Register", Toast.LENGTH_SHORT).show();
+            Intent i2= new Intent(this, Register.class);
+            startActivity(i2);
+            finish();
+        }
     }
 }
